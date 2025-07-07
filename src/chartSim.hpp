@@ -41,4 +41,21 @@ namespace section1
 
         }
     };
+
+    class GaussianSim {
+        utils::Random rand;
+        int x, y;
+
+        public:
+
+        GaussianSim(int width, int height) :  x{width/2}, y{height/2} {}
+
+        void show() {
+            DrawCircle(x, y, 20, Fade(GRAY, 0.25f));
+        }
+
+        void calculatePosition() {
+            x = static_cast<int>(rand.gaussian(320.0f, 120.0f));
+        }
+    };
 }

@@ -12,10 +12,10 @@ namespace utils
     public:
         Random() : engine(time(NULL)) {}
 
-        float gaussian(int mean, int stddev)
+        float gaussian(float mean, float stddev)
         {
             std::normal_distribution<float> d(mean, stddev);
-            return static_cast<int>(d(engine));
+            return d(engine);
         }
         float uniform(int a, int b)
         {

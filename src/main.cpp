@@ -11,7 +11,7 @@ int main()
     int screenHeight = 450;
     section1::Walker walkie{screenWidth, screenHeight};
     section1::BarChartSim barChart{screenWidth, screenHeight};
-
+    section1::GaussianSim gaussian{screenWidth, screenHeight};
     raylib::Color textColor(LIGHTGRAY);
     raylib::Window w(
         screenWidth, screenHeight, "Raylib C++ Starter Kit Example");
@@ -24,15 +24,17 @@ int main()
     {
         // Update
         // walkie.step();
-        barChart.calculateFrequencies();
+        // barChart.calculateFrequencies();
+        gaussian.calculatePosition();
 
-            // TODO: Update your variables here
+        // TODO: Update your variables here
 
-            // Draw
-            BeginDrawing();
-        barChart.show();
+        // Draw
+        BeginDrawing();
 
+        // barChart.show();
         // walkie.show();
+        gaussian.show();
 
         EndDrawing();
     }
